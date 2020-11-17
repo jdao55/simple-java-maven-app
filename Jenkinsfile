@@ -6,6 +6,11 @@ pipeline {
         }
     }
     stages {
+        stage("Prebuild"){
+            steps {
+                sh 'echo prebuilt stage'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
